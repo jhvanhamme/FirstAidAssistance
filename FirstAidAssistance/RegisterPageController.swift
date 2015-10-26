@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class RegisterPageController: UIViewController {
     
@@ -27,6 +28,11 @@ class RegisterPageController: UIViewController {
         // Main option -> Login as registered user
         self.EmailInput.text = segueEmail
         self.PasswordInput.text = seguePassword
+        
+        if(segueEmail != ""){
+            // Recover data from DB
+            searchUserInfos()
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -69,8 +75,9 @@ class RegisterPageController: UIViewController {
         }
         
         //
-        if(inputsAreOK){
-           print("Not implemented -> Register user infos")
+        if (inputsAreOK) {
+            registerInfos()
+            print("-> Register user infos")
         }
     }
     
@@ -117,6 +124,72 @@ class RegisterPageController: UIViewController {
             (segue.destinationViewController as! RegisterPage2Controller).segueEmail = segueEmail
             (segue.destinationViewController as! RegisterPage2Controller).seguePassword = seguePassword
         }
+    }
+    
+    // DATA METHODS
+    
+    func searchUserInfos()->Int{
+        // Init Save data into CoreData
+        let appDlg:AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+        let context:NSManagedObjectContext = appDlg.managedObjectContext
+        
+        // Seek for User with this email address
+        let reqGetUser = NSFetchRequest(entityName: "Users")
+        reqGetUser.returnsObjectsAsFaults = false
+        reqGetUser.predicate = NSPredicate(format: "userEmail = %@", segueEmail)
+        print("Seeking for user =", segueEmail)
+        
+        do{
+            let resultReq = try context.executeFetchRequest(reqGetUser)
+            if(resultReq.count > 0){
+                // Put user info from data into the view
+                let myUser: NSManagedObject = resultReq.first as! NSManagedObject
+                if(myUser.valueForKey("userFirstName") != nil){
+                    FirstNameInput.text = myUser.valueForKey("userFirstName") as? String
+                }
+                if(myUser.valueForKey("userLastName") != nil){
+                    LastNameInput.text = myUser.valueForKey("userLastName") as? String
+                }
+            }
+            return 0
+        } catch {
+            print("Unable to recover your account")
+            return -1
+        }
+    }
+    
+    func registerInfos()->Int{
+        // Init Save data into CoreData
+        let appDlg:AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+        let context:NSManagedObjectContext = appDlg.managedObjectContext
+        
+        // Seek for User with this email address
+        let reqGetUser = NSFetchRequest(entityName: "Users")
+        reqGetUser.returnsObjectsAsFaults = false
+        reqGetUser.predicate = NSPredicate(format: "userEmail = %@", segueEmail)
+        print("Seeking for user =", segueEmail)
+        
+        do{
+            let resultReq = try context.executeFetchRequest(reqGetUser)
+            if(resultReq.count > 0){
+                // Put user settings to data
+                resultReq.first!.setValue(FirstNameInput.text, forKey: "userFirstName")
+                resultReq.first!.setValue(LastNameInput.text, forKey: "userLastName")
+                do {
+                    try context.save()
+                    return 0
+                } catch {
+                    print("Unable to set up your account")
+                    return -1
+                }
+            }
+            print("Unable to recover your account")
+            return -1
+        } catch {
+            print("Unable to recover your account")
+            return -1
+        }
+ 
     }
     
 }

@@ -8,16 +8,18 @@
 
 
 import UIKit
+import CoreData
 
 class RegisterPage2Controller: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate{
 
     // Data from this page
+    @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var RegisterPatientButton: UIButton!
     @IBOutlet weak var RegisterHealthKeeperButton: UIButton!
     @IBOutlet weak var descriptionInput: UITextView!
     @IBOutlet weak var profileChoice: UIPickerView!
     var pickerData: [String] = [String]()
-    var choice: String!
+    var choice: String = "Medecine Practitioner"
     
     // Data from other pages
     var segueEmail: String!
@@ -25,6 +27,8 @@ class RegisterPage2Controller: UIViewController, UIPickerViewDataSource, UIPicke
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.userNameLabel.text = segueEmail
+        
         self.profileChoice.delegate = self
         self.profileChoice.dataSource = self
         pickerData = ["Medecine Practitioner","Patient"]
@@ -64,7 +68,13 @@ class RegisterPage2Controller: UIViewController, UIPickerViewDataSource, UIPicke
     }
     
     @IBAction func RegisterProfileInfo(sender: UIButton) {
-        print("Not implemented -> Register profile & description of the user")
+        print("-> Register profile & description of the user")
+        registerInfos()
+    }
+    
+    @IBAction func RegisterProfileInfoForPatient(sender: UIButton) {
+        print("-> Register profile & description of the user")
+        registerInfos()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -86,6 +96,43 @@ class RegisterPage2Controller: UIViewController, UIPickerViewDataSource, UIPicke
             (segue.destinationViewController as! SupportPageController).segueEmail = segueEmail
             (segue.destinationViewController as! SupportPageController).seguePassword = seguePassword
         }
+    }
+    
+    // DATA METHODS
+    
+    func registerInfos()->Int{
+        // Init Save data into CoreData
+        let appDlg:AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+        let context:NSManagedObjectContext = appDlg.managedObjectContext
+        
+        // Seek for User with this email address
+        let reqGetUser = NSFetchRequest(entityName: "Users")
+        reqGetUser.returnsObjectsAsFaults = false
+        reqGetUser.predicate = NSPredicate(format: "userEmail = %@", segueEmail)
+        print("Seeking for user =", segueEmail)
+        
+        do{
+            let resultReq = try context.executeFetchRequest(reqGetUser)
+            if(resultReq.count > 0){
+                // Put user settings to data
+                print("Choice UserMode = ",choice)
+                resultReq.first!.setValue(choice, forKey: "userMode")
+                resultReq.first!.setValue(descriptionInput.text, forKey: "userDescription")
+                do {
+                    try context.save()
+                    return 0
+                } catch {
+                    print("Unable to set up your account")
+                    return -1
+                }
+            }
+            print("Unable to recover your account")
+            return -1
+        } catch {
+            print("Unable to recover your account")
+            return -1
+        }
+        
     }
     
 }

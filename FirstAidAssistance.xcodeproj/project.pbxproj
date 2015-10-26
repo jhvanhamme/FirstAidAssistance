@@ -18,7 +18,20 @@
 		8F492AAC1BDD5212009F2081 /* RedButton.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 8F492AAB1BDD5212009F2081 /* RedButton.tiff */; };
 		8F492AAE1BDD5955009F2081 /* CallSample.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F492AAD1BDD5955009F2081 /* CallSample.png */; };
 		8F623DDA1BDD801D004AF962 /* RegisterPage2Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F623DD91BDD801D004AF962 /* RegisterPage2Controller.swift */; };
+		8FFE99431BDE8CAF00D81FD9 /* CoreDataForFAA.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8FFE99411BDE8CAF00D81FD9 /* CoreDataForFAA.xcdatamodeld */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		8FFE99401BDE8C1900D81FD9 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = pattern.proxy;
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "";
+		};
+/* End PBXBuildRule section */
 
 /* Begin PBXFileReference section */
 		8F4106201BDD2B5C00D55B55 /* FirstAidAssistance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstAidAssistance.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,6 +47,7 @@
 		8F492AAB1BDD5212009F2081 /* RedButton.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = RedButton.tiff; sourceTree = "<group>"; };
 		8F492AAD1BDD5955009F2081 /* CallSample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CallSample.png; sourceTree = "<group>"; };
 		8F623DD91BDD801D004AF962 /* RegisterPage2Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterPage2Controller.swift; sourceTree = "<group>"; };
+		8FFE99421BDE8CAF00D81FD9 /* CoreDataForFAA.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataForFAA.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,13 +83,14 @@
 				8F492AAA1BDD51C7009F2081 /* Images */,
 				8F4106231BDD2B5C00D55B55 /* AppDelegate.swift */,
 				8F4106251BDD2B5C00D55B55 /* LoginPageController.swift */,
-				8F492AA61BDD430F009F2081 /* HelpMePageController.swift */,
 				8F492AA41BDD42CC009F2081 /* RegisterPageController.swift */,
 				8F623DD91BDD801D004AF962 /* RegisterPage2Controller.swift */,
+				8F492AA61BDD430F009F2081 /* HelpMePageController.swift */,
 				8F492AA81BDD435F009F2081 /* SupportPageController.swift */,
+				8FFE99411BDE8CAF00D81FD9 /* CoreDataForFAA.xcdatamodeld */,
 				8F4106271BDD2B5C00D55B55 /* Main.storyboard */,
-				8F41062A1BDD2B5C00D55B55 /* Assets.xcassets */,
 				8F41062C1BDD2B5C00D55B55 /* LaunchScreen.storyboard */,
+				8F41062A1BDD2B5C00D55B55 /* Assets.xcassets */,
 				8F41062F1BDD2B5C00D55B55 /* Info.plist */,
 			);
 			path = FirstAidAssistance;
@@ -102,6 +117,7 @@
 				8F41061E1BDD2B5C00D55B55 /* Resources */,
 			);
 			buildRules = (
+				8FFE99401BDE8C1900D81FD9 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -166,6 +182,7 @@
 				8F492AA91BDD435F009F2081 /* SupportPageController.swift in Sources */,
 				8F623DDA1BDD801D004AF962 /* RegisterPage2Controller.swift in Sources */,
 				8F4106261BDD2B5C00D55B55 /* LoginPageController.swift in Sources */,
+				8FFE99431BDE8CAF00D81FD9 /* CoreDataForFAA.xcdatamodeld in Sources */,
 				8F492AA71BDD430F009F2081 /* HelpMePageController.swift in Sources */,
 				8F492AA51BDD42CC009F2081 /* RegisterPageController.swift in Sources */,
 				8F4106241BDD2B5C00D55B55 /* AppDelegate.swift in Sources */,
@@ -319,6 +336,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8FFE99411BDE8CAF00D81FD9 /* CoreDataForFAA.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8FFE99421BDE8CAF00D81FD9 /* CoreDataForFAA.xcdatamodel */,
+			);
+			currentVersion = 8FFE99421BDE8CAF00D81FD9 /* CoreDataForFAA.xcdatamodel */;
+			path = CoreDataForFAA.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8F4106181BDD2B5C00D55B55 /* Project object */;
 }

@@ -7,28 +7,38 @@
 //
 
 import UIKit
+import CoreData
 
 class SupportPageController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
-    @IBOutlet weak var ListOfCases: UITableView!
     // Data from this page
-    @IBOutlet weak var UserLabel: UILabel!
-    @IBOutlet weak var UserEmailLabel: UIView!
+    @IBOutlet weak var UserLabel: UILabel?
+    @IBOutlet weak var ListOfCases: UITableView?
     var textCellIdentifier = "MyCells"
     var sampleListData: [String] = [String]()
     
     // Data from other pages
-    var segueEmail: String!
-    var seguePassword: String!
+    var segueEmail: String = ""
+    var seguePassword: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.UserLabel.text = segueEmail
+        
+        if (UserLabel == nil){
+            print("UILabel not initialized")
+        } else {
+            UserLabel!.text = segueEmail
+        }
         
         // Demo data - Fill the list of cases
-        ListOfCases.delegate = self
-        ListOfCases.dataSource = self
-        sampleListData = ["JH Vanhamme", "JEAN Decoster"]
+        if (ListOfCases == nil){
+            print("ListOfCases not initialized")
+        } else {
+            ListOfCases!.delegate = self
+            ListOfCases!.dataSource = self
+            sampleListData = ["JH Vanhamme", "JEAN Decoster"]
+        }
+
     }
     
     override func didReceiveMemoryWarning() {
