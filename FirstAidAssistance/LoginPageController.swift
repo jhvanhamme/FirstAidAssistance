@@ -26,6 +26,7 @@ class LoginPageController: UIViewController {
     // Others
     var count: Int = 0;
     var userMode: String = "";
+    var userFirstName: String = "";
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -153,6 +154,7 @@ class LoginPageController: UIViewController {
             print("segueToHelpMe")
             (segue.destinationViewController as! HelpMePageController).segueLabel = emailInput.text
             (segue.destinationViewController as! HelpMePageController).seguePassword = passwordInput.text
+            (segue.destinationViewController as! HelpMePageController).segueFirstName = userFirstName
         }
         
         // Prepare data to go to Register page
@@ -201,6 +203,8 @@ class LoginPageController: UIViewController {
                         // UserMode = 0 -> Patient
                         // UserMode = 1 -> Medecine Practitioner
                         userMode = user.valueForKey("userMode") as! String
+                        userFirstName = user.valueForKey("userFirstName") as! String
+                        print("userFirstName = ", userFirstName)
                         return 0
                     }
                 } catch {

@@ -20,6 +20,7 @@ class RegisterPage2Controller: UIViewController, UIPickerViewDataSource, UIPicke
     @IBOutlet weak var profileChoice: UIPickerView!
     var pickerData: [String] = [String]()
     var choice: String = "Medecine Practitioner"
+    var userFirstName: String = "";
     
     // Data from other pages
     var segueEmail: String!
@@ -88,6 +89,7 @@ class RegisterPage2Controller: UIViewController, UIPickerViewDataSource, UIPicke
             print("segueToPatient")
             (segue.destinationViewController as! HelpMePageController).segueLabel = segueEmail
             (segue.destinationViewController as! HelpMePageController).seguePassword = seguePassword
+            (segue.destinationViewController as! HelpMePageController).segueFirstName = userFirstName
         }
         
         // Prepare data to go to xxx page
@@ -99,7 +101,6 @@ class RegisterPage2Controller: UIViewController, UIPickerViewDataSource, UIPicke
     }
     
     // DATA METHODS
-    
     func registerInfos()->Int{
         // Init Save data into CoreData
         let appDlg:AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
@@ -118,6 +119,8 @@ class RegisterPage2Controller: UIViewController, UIPickerViewDataSource, UIPicke
                 print("Choice UserMode = ",choice)
                 resultReq.first!.setValue(choice, forKey: "userMode")
                 resultReq.first!.setValue(descriptionInput.text, forKey: "userDescription")
+                userFirstName = resultReq.first!.valueForKey("userFirstName") as! String
+                print("userFirstName = ", userFirstName)
                 do {
                     try context.save()
                     return 0

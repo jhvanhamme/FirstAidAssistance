@@ -36,7 +36,9 @@ class SupportPageController: UIViewController, UITableViewDataSource, UITableVie
         } else {
             ListOfCases!.delegate = self
             ListOfCases!.dataSource = self
-            sampleListData = ["JH Vanhamme", "JEAN Decoster"]
+            checkForAlerts()
+            sampleListData += ["13 min ago, 5km, from JH"]
+            sampleListData += ["20 min ago, 2km, from JEAN"]
         }
 
     }
@@ -85,4 +87,30 @@ class SupportPageController: UIViewController, UITableViewDataSource, UITableVie
         let row = indexPath.row
         print(sampleListData[row])
     }
+    
+    // DATA METHODS$
+    func checkForAlerts(){
+        // Init Save data into CoreData
+        let appDlg:AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+        let context:NSManagedObjectContext = appDlg.managedObjectContext
+        
+        // Seek for User with this email address
+        let reqGetAlerts = NSFetchRequest(entityName: "Alerts")
+        reqGetAlerts.returnsObjectsAsFaults = false
+        reqGetAlerts.predicate = NSPredicate(format: "alertHasBeenTaken = %@", "0")
+        
+        do{
+            let resultReq = try context.executeFetchRequest(reqGetAlerts)
+            // Put alerts info from data into the view
+            if(resultReq.count > 0){
+                for row in resultReq{
+                    print(row)
+                    sampleListData += [row.valueForKey("alertTime") as! String, " min ago, ", row.valueForKey("alertLocation") as! String, ", from", row.valueForKey("alertFromUserFirstName") as! String]
+                }
+            }
+        } catch {
+            print("Unable to recover alerts")
+        }
+    }
+
 }
