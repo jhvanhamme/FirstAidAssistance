@@ -195,7 +195,7 @@ class SupportPageController: UIViewController, UITableViewDataSource, UITableVie
         let rdOfficeLocation = CLLocationCoordinate2DMake(50.63301533411599,3.0188316106796265);
         let placemark = MKPlacemark.init(coordinate: rdOfficeLocation, addressDictionary: nil)
         let item = MKMapItem.init(placemark: placemark)
-        item.name = "Ping";
+        item.name = "Alert's location";
         item.openInMapsWithLaunchOptions(nil)
     }
 }

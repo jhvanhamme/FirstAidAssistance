@@ -253,6 +253,8 @@ Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed 
                         <outlet property="FirstNameInput" destination="aDy-hL-Cgr" id="tbI-04-NN1"/>
                         <outlet property="LastNameInput" destination="tSv-zt-PKB" id="s2h-Lt-em1"/>
                         <outlet property="PasswordInput" destination="6OK-IU-tas" id="x61-5t-OB5"/>
+                        <outlet property="Switch18" destination="Akh-OL-ewF" id="m6Z-Tr-YZU"/>
+                        <outlet property="SwitchAgree" destination="fJp-bD-W0Z" id="Qda-0q-27f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="29n-CK-3yz" userLabel="First Responder" sceneMemberID="firstResponder"/>

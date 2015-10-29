@@ -113,7 +113,7 @@ class LoginPageController: UIViewController, UITextFieldDelegate {
             return false
         } else {
             if (passwordInput.text?.characters.count < 6){
-                createNewAlert("Invalid Field", myMessage: "Password myst be 6 characters long minimum", myPossibility: "Accept")
+                createNewAlert("Invalid Field", myMessage: "Password must be 6 characters long minimum", myPossibility: "Accept")
                 return false
             }
         }

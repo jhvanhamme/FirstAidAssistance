@@ -16,6 +16,8 @@ class RegisterPageController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var EmailInput: UITextField!
     @IBOutlet weak var LastNameInput: UITextField!
     @IBOutlet weak var FirstNameInput: UITextField!
+    @IBOutlet var Switch18: UISwitch?
+    @IBOutlet var SwitchAgree: UISwitch?
     var countAge: Int = 1;
     var countAgree: Int = 1;
     
@@ -111,7 +113,7 @@ class RegisterPageController: UIViewController, UITextFieldDelegate {
             return false
         } else {
             if (PasswordInput.text?.characters.count < 6){
-                createNewAlert("Invalid Field", myMessage: "Password myst be 6 characters long minimum", myPossibility: "Accept")
+                createNewAlert("Invalid Field", myMessage: "Password must be 6 characters long minimum", myPossibility: "Accept")
                 return false
             }
         }
@@ -156,6 +158,12 @@ class RegisterPageController: UIViewController, UITextFieldDelegate {
                 let myUser: NSManagedObject = resultReq.first as! NSManagedObject
                 if(myUser.valueForKey("userFirstName") != nil){
                     FirstNameInput.text = myUser.valueForKey("userFirstName") as? String
+                    
+                    //Check UISwitcher's
+                    countAge = 0
+                    countAgree = 0
+                    Switch18?.setOn(true, animated: false)
+                    SwitchAgree?.setOn(true, animated: false)
                 }
                 if(myUser.valueForKey("userLastName") != nil){
                     LastNameInput.text = myUser.valueForKey("userLastName") as? String
