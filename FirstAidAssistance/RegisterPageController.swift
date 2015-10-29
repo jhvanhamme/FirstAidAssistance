@@ -16,8 +16,8 @@ class RegisterPageController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var EmailInput: UITextField!
     @IBOutlet weak var LastNameInput: UITextField!
     @IBOutlet weak var FirstNameInput: UITextField!
-    var countAge: Int = 0;
-    var countAgree: Int = 0;
+    var countAge: Int = 1;
+    var countAgree: Int = 1;
     
     // Data from othe pages
     var segueEmail: String!
@@ -28,10 +28,6 @@ class RegisterPageController: UIViewController, UITextFieldDelegate {
         // Main option -> Login as registered user
         self.EmailInput.text = segueEmail
         self.PasswordInput.text = seguePassword
-        //PasswordInput.resignFirstResponder()
-        //EmailInput.resignFirstResponder()
-        //LastNameInput.resignFirstResponder()
-        //FirstNameInput.resignFirstResponder()
         self.PasswordInput.delegate = self
         self.EmailInput.delegate = self
         self.LastNameInput.delegate = self

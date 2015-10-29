@@ -10,7 +10,7 @@
 import UIKit
 import CoreData
 
-class RegisterPage2Controller: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate{
+class RegisterPage2Controller: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate{
 
     // Data from this page
     @IBOutlet weak var userNameLabel: UILabel!
@@ -35,6 +35,7 @@ class RegisterPage2Controller: UIViewController, UIPickerViewDataSource, UIPicke
     override func viewDidLoad() {
         super.viewDidLoad()
         self.userNameLabel.text = segueEmail
+        self.KmInput.delegate = self
         
         // Picker data initializer
         self.profileChoice.delegate = self
@@ -47,14 +48,12 @@ class RegisterPage2Controller: UIViewController, UIPickerViewDataSource, UIPicke
 
         // Main option -> Login as HealthKeeper
         RegisterPatientButton.hidden = true
-        
-        // NewGesture to leave inputs when editing
-        let tapRec = UITapGestureRecognizer.init(target: self, action: "dismissKeybord")
-        self.view.addGestureRecognizer(tapRec)
     }
     
-    func dismissKeyboard(){
-        self.view.endEditing(true)
+    func textFieldShouldReturn(userText: UITextField) -> Bool
+    {
+        userText.resignFirstResponder()
+        return true
     }
     
     override func didReceiveMemoryWarning() {

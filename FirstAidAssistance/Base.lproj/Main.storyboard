@@ -18,14 +18,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OUh-y4-w6S">
-                                <rect key="frame" x="41" y="154" width="91" height="21"/>
+                                <rect key="frame" x="41" y="140" width="91" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqF-iQ-1U3">
-                                <rect key="frame" x="41" y="104" width="180" height="21"/>
+                                <rect key="frame" x="41" y="90" width="180" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -41,33 +41,27 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vAJ-Cx-TjC">
-                                <rect key="frame" x="140" y="100" width="193" height="30"/>
+                                <rect key="frame" x="140" y="86" width="193" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v8w-6V-xu0">
-                                <rect key="frame" x="140" y="150" width="193" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             </textField>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DfU-ID-SGv">
-                                <rect key="frame" x="284" y="197" width="51" height="31"/>
+                                <rect key="frame" x="284" y="183" width="51" height="31"/>
                                 <animations/>
                                 <connections>
                                     <action selector="choiceSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="rVS-lp-jIA"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sign In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fgn-9V-gQK">
-                                <rect key="frame" x="156" y="202" width="108" height="21"/>
+                                <rect key="frame" x="156" y="188" width="108" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GcW-qZ-tMu">
-                                <rect key="frame" x="148" y="240" width="79" height="30"/>
+                                <rect key="frame" x="148" y="226" width="79" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Connection"/>
                                 <connections>
@@ -84,7 +78,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DPk-ly-z3N">
-                                <rect key="frame" x="128" y="240" width="119" height="30"/>
+                                <rect key="frame" x="128" y="226" width="119" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Set Up my profile"/>
                                 <connections>
@@ -92,9 +86,31 @@
                                     <segue destination="tFv-6w-NEP" kind="show" identifier="segueToRegister" id="Fzj-US-XJ1"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Because everyone's life matters" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tdi-7O-ObN">
+                                <rect key="frame" x="32" y="78" width="309" height="28"/>
+                                <animations/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="shadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v8w-6V-xu0">
+                                <rect key="frame" x="140" y="136" width="193" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Tdi-7O-ObN"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Sign In or Register" id="8UI-NA-NQX"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -104,6 +120,7 @@
                         <outlet property="ConnectionToKHButton" destination="tQv-tD-Wll" id="zrr-dg-uzL"/>
                         <outlet property="MainConnectionButton" destination="GcW-qZ-tMu" id="FbN-Te-OWV"/>
                         <outlet property="SetUpProfileButton" destination="DPk-ly-z3N" id="RuN-aG-G2t"/>
+                        <outlet property="TitleLabel" destination="Tdi-7O-ObN" id="tjQ-Rz-MCR"/>
                         <outlet property="emailInput" destination="vAJ-Cx-TjC" id="lCs-6u-NvK"/>
                         <outlet property="passwordInput" destination="v8w-6V-xu0" id="mhE-Wo-jde"/>
                     </connections>
@@ -112,10 +129,10 @@
             </objects>
             <point key="canvasLocation" x="406.5" y="776.5"/>
         </scene>
-        <!--Register Page Controller-->
+        <!--Set Up your profile 1/2-->
         <scene sceneID="N8r-an-FX6">
             <objects>
-                <viewController id="tFv-6w-NEP" customClass="RegisterPageController" customModule="FirstAidAssistance" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Set Up your profile 1/2" id="tFv-6w-NEP" customClass="RegisterPageController" customModule="FirstAidAssistance" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ii2-fq-AEQ"/>
                         <viewControllerLayoutGuide type="bottom" id="VHO-OR-n3Y"/>
@@ -166,14 +183,14 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Akh-OL-ewF">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Akh-OL-ewF">
                                 <rect key="frame" x="289" y="262" width="51" height="31"/>
                                 <animations/>
                                 <connections>
                                     <action selector="SwitchAge:" destination="tFv-6w-NEP" eventType="valueChanged" id="fFU-77-gMv"/>
                                 </connections>
                             </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fJp-bD-W0Z">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fJp-bD-W0Z">
                                 <rect key="frame" x="289" y="305" width="51" height="31"/>
                                 <animations/>
                                 <connections>
@@ -242,10 +259,10 @@ Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed 
             </objects>
             <point key="canvasLocation" x="1154.5" y="776.5"/>
         </scene>
-        <!--Register Page2 Controller-->
+        <!--Set Up your profile 2/2-->
         <scene sceneID="T3x-Xp-dc5">
             <objects>
-                <viewController id="k4E-Ob-pAk" customClass="RegisterPage2Controller" customModule="FirstAidAssistance" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Set Up your profile 2/2" id="k4E-Ob-pAk" customClass="RegisterPage2Controller" customModule="FirstAidAssistance" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ANT-dw-0nq"/>
                         <viewControllerLayoutGuide type="bottom" id="uJc-sz-v0j"/>
@@ -315,18 +332,18 @@ Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed 
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" keyboardDismissMode="onDrag" text="Here, you can add some informations about you. Just check in." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0vH-qQ-PeI">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" keyboardDismissMode="onDrag" text="Add more informations." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0vH-qQ-PeI">
                                 <rect key="frame" x="44" y="378" width="285" height="219"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Chy-6x-LfE">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Chy-6x-LfE">
                                 <rect key="frame" x="234" y="331" width="51" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Respond to alerts in the               kms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jv-qx-UJD">
                                 <rect key="frame" x="44" y="334" width="298" height="21"/>
@@ -356,10 +373,10 @@ Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed 
             </objects>
             <point key="canvasLocation" x="1688.5" y="776.5"/>
         </scene>
-        <!--Support Page Controller-->
+        <!--Nearby alerts-->
         <scene sceneID="xdf-7q-Yci">
             <objects>
-                <viewController id="yCM-Pm-Yt2" customClass="SupportPageController" customModule="FirstAidAssistance" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Nearby alerts" id="yCM-Pm-Yt2" customClass="SupportPageController" customModule="FirstAidAssistance" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xGp-O0-N9R"/>
                         <viewControllerLayoutGuide type="bottom" id="lSb-4A-yVH"/>
@@ -447,10 +464,10 @@ Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed 
             </objects>
             <point key="canvasLocation" x="897.5" y="-285.5"/>
         </scene>
-        <!--Help Me Page Controller-->
+        <!--Launch an alert-->
         <scene sceneID="rcE-aQ-thi">
             <objects>
-                <viewController id="SQp-Nq-xy1" customClass="HelpMePageController" customModule="FirstAidAssistance" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Launch an alert" id="SQp-Nq-xy1" customClass="HelpMePageController" customModule="FirstAidAssistance" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gn0-1P-oco"/>
                         <viewControllerLayoutGuide type="bottom" id="vge-hS-GJe"/>
@@ -548,9 +565,9 @@ Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed 
         <image name="RedButton.tiff" width="496" height="482"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1tS-QU-96b"/>
-        <segue reference="SmU-z4-UZM"/>
-        <segue reference="Qxh-jV-e3S"/>
-        <segue reference="HWh-QV-hp9"/>
+        <segue reference="sZW-F4-vKt"/>
+        <segue reference="2Cg-RY-lts"/>
+        <segue reference="Fzj-US-XJ1"/>
+        <segue reference="G7m-hG-oV0"/>
     </inferredMetricsTieBreakers>
 </document>

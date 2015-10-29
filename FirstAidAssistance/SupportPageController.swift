@@ -21,6 +21,7 @@ class SupportPageController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var MapButton: UIButton!
     var lastRow: NSIndexPath = NSIndexPath()
     var rowCpt = 0
+    var userEmailAlert = ""
     
     // Data from other pages
     var segueEmail: String = ""
@@ -46,8 +47,6 @@ class SupportPageController: UIViewController, UITableViewDataSource, UITableVie
             ListOfCases!.delegate = self
             ListOfCases!.dataSource = self
             checkForAlerts()
-            //sampleListData += ["13 min ago, 5km, from JH"]
-            //sampleListData += ["20 min ago, 2km, from JEAN"]
         }
 
     }
@@ -98,6 +97,7 @@ class SupportPageController: UIViewController, UITableViewDataSource, UITableVie
         
         let row = indexPath.row
         
+        userEmailAlert = sampleListData.AlertList[row].userEmail!
         PatientDescription.text = sampleListData.AlertList[row].getCondition()
     }
     
@@ -150,14 +150,30 @@ class SupportPageController: UIViewController, UITableViewDataSource, UITableVie
         return (scd / 3600, (scd % 3600) / 60, (scd % 3600) % 60)
     }
     
+    func updateAlert(){
+        // Init Save data into CoreData
+        let appDlg:AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+        let context:NSManagedObjectContext = appDlg.managedObjectContext
+
+        let reqGetAlerts = NSFetchRequest(entityName: "Alerts")
+        reqGetAlerts.returnsObjectsAsFaults = false
+        reqGetAlerts.predicate = NSPredicate(format: "alertHasBeenTaken = %@", "0")
+        reqGetAlerts.predicate = NSPredicate(format: "alertFromUserEmail = %@", userEmailAlert)
+        
+        do{
+            let resultReq = try context.executeFetchRequest(reqGetAlerts)
+            // Put alerts info from data into the view
+            if(resultReq.count > 0){
+                resultReq.first!.setValue("1", forKey: "alertHasBeenTaken")
+                try context.save()
+            }
+        } catch {
+            print("Unable to set alert off")
+        }
+    }
+    
     // MAP METHODS
     @IBAction func TakeIt(sender: UIButton) {
-        //give the user a choice of Apple or Google Maps
-        //UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:"Open in Maps" delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:"Apple Maps","Google Maps", nil];
-//        let sheet: UIActionSheet = UIActionSheet()
-//        sheet.addButtonWithTitle("Open in Apple Maps")
-//        sheet.showInView(self.view)
-        
         let alert = UIAlertController.init(title: "Choose", message: "Action View", preferredStyle:UIAlertControllerStyle.ActionSheet)
         let firstAction = UIAlertAction.init(title: "Open in Maps", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in
             self.popupMap()
@@ -171,6 +187,10 @@ class SupportPageController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func popupMap(){
+        //Set the alert has "taken"
+        print("Set alert taken for = ", userEmailAlert)
+        updateAlert()
+        
         //coordinates for the place we want to display
         let rdOfficeLocation = CLLocationCoordinate2DMake(50.63301533411599,3.0188316106796265);
         let placemark = MKPlacemark.init(coordinate: rdOfficeLocation, addressDictionary: nil)

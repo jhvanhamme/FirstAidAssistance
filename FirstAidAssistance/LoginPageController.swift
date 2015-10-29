@@ -12,6 +12,7 @@ import CoreData
 class LoginPageController: UIViewController, UITextFieldDelegate {
     
     // Inputs
+    @IBOutlet weak var TitleLabel: UILabel!
     @IBOutlet weak var emailInput: UITextField!
     @IBOutlet weak var passwordInput: UITextField!
     @IBOutlet weak var ChoiceLabel: UILabel!
@@ -29,6 +30,13 @@ class LoginPageController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Cosmetic
+//        let myColor = UIColor.blueColor()
+//        TitleLabel.layer.borderColor = myColor.CGColor
+//        TitleLabel.layer.cornerRadius = 10.0
+//        TitleLabel.layer.borderWidth = 1.0;
+        
         // Main option -> Login as registered user
         // Profile Set Up Button will disappear
         SetUpProfileButton.hidden = true
