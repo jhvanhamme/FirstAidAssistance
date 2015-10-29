@@ -78,29 +78,63 @@ class HelpMePageController: UIViewController, CLLocationManagerDelegate{
     
     // DATA METHODS
     func addAlert()->Int{
+        
+        // Check userInfo
         // Init Save data into CoreData
         let appDlg:AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
         let context:NSManagedObjectContext = appDlg.managedObjectContext
         
-        // Add new User
-        let alert = NSEntityDescription.insertNewObjectForEntityForName("Alerts", inManagedObjectContext: context) as NSManagedObject
-        alert.setValue(segueLabel, forKey: "alertFromUserEmail")
-        alert.setValue(segueFirstName, forKey: "alertFromUserFirstName")
-        alert.setValue("0", forKey: "alertHasBeenTaken")
+        // Seek for User with this email address
+        let reqGetUser = NSFetchRequest(entityName: "Users")
+        reqGetUser.returnsObjectsAsFaults = false
+        reqGetUser.predicate = NSPredicate(format: "userEmail = %@", segueLabel)
+        print("Seeking for user =", segueLabel)
         
-        // Get Current Location
-        
-        
-        alert.setValue("Lille", forKey: "alertLocation")
-        alert.setValue(NSDate(), forKey: "alertTime")
         do{
-            try context.save()
-            print("Alert created", alert)
-            return 0
-        } catch {
-            print("Unable to create your alert")
+            let resultReq = try context.executeFetchRequest(reqGetUser)
+            if(resultReq.count > 0){
+                
+                // Create new Alert
+
+                // Init Save data into CoreData
+                let appDlg:AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+                let context:NSManagedObjectContext = appDlg.managedObjectContext
+
+                let alert = NSEntityDescription.insertNewObjectForEntityForName("Alerts", inManagedObjectContext: context) as NSManagedObject
+                alert.setValue(segueLabel, forKey: "alertFromUserEmail")
+                alert.setValue(segueFirstName, forKey: "alertFromUserFirstName")
+                alert.setValue("0", forKey: "alertHasBeenTaken")
+                alert.setValue(resultReq.first!.valueForKey("userDescription"), forKey: "alertFromUserDescription")
+                alert.setValue(resultReq.first!.valueForKey("userCondition"), forKey: "alertFromUserCondition")
+                
+                // Get Current Location
+                alert.setValue("Lille", forKey: "alertLocation")
+                
+                // getDate
+                let dateFormatter = NSDateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                let dateString = dateFormatter.stringFromDate(NSDate())
+                print("dateString = ", dateString)
+                alert.setValue(dateString, forKey: "alertTime")
+                
+                // Save data
+                do{
+                    try context.save()
+                    print("Alert created", alert)
+                    return 0
+                } catch {
+                    print("Unable to create your alert")
+                    return -1
+                }
+                
+            }else{
+                return -1
+            }
+        }
+        catch{
             return -1
         }
+        
     }
     
     // Location Methods

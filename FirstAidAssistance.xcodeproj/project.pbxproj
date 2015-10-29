@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F1F12331BE15A210086EAD7 /* UserAlertList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F12321BE15A210086EAD7 /* UserAlertList.swift */; };
 		8F4106241BDD2B5C00D55B55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4106231BDD2B5C00D55B55 /* AppDelegate.swift */; };
 		8F4106261BDD2B5C00D55B55 /* LoginPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4106251BDD2B5C00D55B55 /* LoginPageController.swift */; };
 		8F4106291BDD2B5C00D55B55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F4106271BDD2B5C00D55B55 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildRule section */
 
 /* Begin PBXFileReference section */
+		8F1F12321BE15A210086EAD7 /* UserAlertList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAlertList.swift; sourceTree = "<group>"; };
 		8F4106201BDD2B5C00D55B55 /* FirstAidAssistance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstAidAssistance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F4106231BDD2B5C00D55B55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F4106251BDD2B5C00D55B55 /* LoginPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageController.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				8F623DD91BDD801D004AF962 /* RegisterPage2Controller.swift */,
 				8F492AA61BDD430F009F2081 /* HelpMePageController.swift */,
 				8F492AA81BDD435F009F2081 /* SupportPageController.swift */,
+				8F1F12321BE15A210086EAD7 /* UserAlertList.swift */,
 				8FFE99411BDE8CAF00D81FD9 /* CoreDataForFAA.xcdatamodeld */,
 				8F4106271BDD2B5C00D55B55 /* Main.storyboard */,
 				8F41062C1BDD2B5C00D55B55 /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 				TargetAttributes = {
 					8F41061F1BDD2B5C00D55B55 = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = AQ2CH68UF7;
 					};
 				};
 			};
@@ -184,6 +188,7 @@
 				8F4106261BDD2B5C00D55B55 /* LoginPageController.swift in Sources */,
 				8FFE99431BDE8CAF00D81FD9 /* CoreDataForFAA.xcdatamodeld in Sources */,
 				8F492AA71BDD430F009F2081 /* HelpMePageController.swift in Sources */,
+				8F1F12331BE15A210086EAD7 /* UserAlertList.swift in Sources */,
 				8F492AA51BDD42CC009F2081 /* RegisterPageController.swift in Sources */,
 				8F4106241BDD2B5C00D55B55 /* AppDelegate.swift in Sources */,
 			);
@@ -296,10 +301,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FirstAidAssistance/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.FirstAidAssistance;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -307,10 +315,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FirstAidAssistance/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.FirstAidAssistance;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

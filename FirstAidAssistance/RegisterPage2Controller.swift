@@ -18,8 +18,14 @@ class RegisterPage2Controller: UIViewController, UIPickerViewDataSource, UIPicke
     @IBOutlet weak var RegisterHealthKeeperButton: UIButton!
     @IBOutlet weak var descriptionInput: UITextView!
     @IBOutlet weak var profileChoice: UIPickerView!
+    @IBOutlet weak var OptionChoice: UIPickerView!
+    @IBOutlet weak var userOptionChoice: UILabel!
+    @IBOutlet weak var KmLabel: UILabel!
+    @IBOutlet weak var KmInput: UITextField!
     var pickerData: [String] = [String]()
+    var pickerOptionData: [String] = [String]()
     var choice: String = "Medecine Practitioner"
+    var choiceOption: String = "Hospital Staff"
     var userFirstName: String = "";
     
     // Data from other pages
@@ -30,11 +36,25 @@ class RegisterPage2Controller: UIViewController, UIPickerViewDataSource, UIPicke
         super.viewDidLoad()
         self.userNameLabel.text = segueEmail
         
+        // Picker data initializer
         self.profileChoice.delegate = self
         self.profileChoice.dataSource = self
         pickerData = ["Medecine Practitioner","Patient"]
+        
+        self.OptionChoice.delegate = self
+        self.OptionChoice.dataSource = self
+        pickerOptionData = ["Hospital Staff", "Doctor", "Pharmacist", "Basic first aid trained"]
+
         // Main option -> Login as HealthKeeper
         RegisterPatientButton.hidden = true
+        
+        // NewGesture to leave inputs when editing
+        let tapRec = UITapGestureRecognizer.init(target: self, action: "dismissKeybord")
+        self.view.addGestureRecognizer(tapRec)
+    }
+    
+    func dismissKeyboard(){
+        self.view.endEditing(true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -49,23 +69,46 @@ class RegisterPage2Controller: UIViewController, UIPickerViewDataSource, UIPicke
     
     // The number of rows of data
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerData.count
+        if pickerView.tag == 1{
+            return pickerData.count
+        }else{
+            return pickerOptionData.count
+        }
     }
     
     // The data to return for the row and component (column) that's being passed in
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
-        choice = pickerData[row]
-        if choice == "Medecine Practitioner"{
-            RegisterPatientButton.hidden = true
-            RegisterHealthKeeperButton.hidden = false
-        }
-        else {
-            RegisterPatientButton.hidden = false
-            RegisterHealthKeeperButton.hidden = true
-        }
-        
+        if pickerView.tag == 1{
+            choice = pickerData[row]
+            pickerData = ["Medecine Practitioner","Patient"]
+            
+            if choice == "Medecine Practitioner"{
+                RegisterPatientButton.hidden = true
+                RegisterHealthKeeperButton.hidden = false
+                KmLabel.hidden = false
+                KmInput.hidden = false
+                pickerOptionData = ["Hospital Staff", "Doctor", "Pharmacist", "Basic first aid trained"]
+                self.OptionChoice.reloadAllComponents()
+                userOptionChoice.text = "What's your training ?"
+            }
+            else if choice == "Patient"{
+                RegisterPatientButton.hidden = false
+                RegisterHealthKeeperButton.hidden = true
+                KmLabel.hidden = true
+                KmInput.hidden = true
+                pickerOptionData = ["Heart issues", "Diabetes"]
+                self.OptionChoice.reloadAllComponents()
+                userOptionChoice.text = "What's your condition ?"
+            }
+            
+            
         return pickerData[row]
+            
+        } else {
+            choiceOption = pickerOptionData[row]
+            return pickerOptionData[row]
+        }
     }
     
     @IBAction func RegisterProfileInfo(sender: UIButton) {
@@ -119,6 +162,7 @@ class RegisterPage2Controller: UIViewController, UIPickerViewDataSource, UIPicke
                 print("Choice UserMode = ",choice)
                 resultReq.first!.setValue(choice, forKey: "userMode")
                 resultReq.first!.setValue(descriptionInput.text, forKey: "userDescription")
+                resultReq.first!.setValue(choiceOption, forKey: "userCondition")
                 userFirstName = resultReq.first!.valueForKey("userFirstName") as! String
                 print("userFirstName = ", userFirstName)
                 do {

@@ -110,7 +110,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2016.5" y="788.5"/>
+            <point key="canvasLocation" x="406.5" y="776.5"/>
         </scene>
         <!--Register Page Controller-->
         <scene sceneID="N8r-an-FX6">
@@ -184,13 +184,13 @@
                                 <rect key="frame" x="161" y="83" width="177" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tSv-zt-PKB">
                                 <rect key="frame" x="161" y="127" width="177" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qKg-aX-v31">
                                 <rect key="frame" x="161" y="172" width="177" height="30"/>
@@ -199,13 +199,13 @@
                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                 </accessibility>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6OK-IU-tas">
                                 <rect key="frame" x="161" y="217" width="177" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fAX-Tp-BRy">
                                 <rect key="frame" x="36" y="364" width="297" height="250"/>
@@ -240,7 +240,7 @@ Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="29n-CK-3yz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2584.5" y="1640.5"/>
+            <point key="canvasLocation" x="1154.5" y="776.5"/>
         </scene>
         <!--Register Page2 Controller-->
         <scene sceneID="T3x-Xp-dc5">
@@ -261,7 +261,7 @@ Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed 
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What profile do you need?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y59-X0-Jx1">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What profile do you need ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y59-X0-Jx1">
                                 <rect key="frame" x="45" y="112" width="231" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -275,22 +275,8 @@ Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed 
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Give some infomations about you :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGD-Ue-5JK">
-                                <rect key="frame" x="45" y="218" width="264" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Set your informations here." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Mky-xW-Zrm">
-                                <rect key="frame" x="45" y="256" width="285" height="237"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="light"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gd6-gr-kk8">
-                                <rect key="frame" x="100" y="507" width="174" height="30"/>
+                                <rect key="frame" x="100" y="610" width="174" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Register as HealthKeeper"/>
                                 <connections>
@@ -298,12 +284,12 @@ Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed 
                                     <segue destination="yCM-Pm-Yt2" kind="show" identifier="segueToHK" id="1tS-QU-96b"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gmo-4V-5sQ">
-                                <rect key="frame" x="45" y="141" width="285" height="64"/>
+                            <pickerView tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gmo-4V-5sQ">
+                                <rect key="frame" x="44" y="141" width="285" height="71"/>
                                 <animations/>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oE0-J3-o6k">
-                                <rect key="frame" x="123" y="507" width="128" height="30"/>
+                                <rect key="frame" x="113" y="610" width="128" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Register as Patient"/>
                                 <connections>
@@ -311,22 +297,64 @@ Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed 
                                     <segue destination="SQp-Nq-xy1" kind="show" identifier="segueToPatient" id="Qxh-jV-e3S"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What's your training ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gxb-HP-7BQ">
+                                <rect key="frame" x="44" y="220" width="250" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView tag="2" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XbM-aZ-zWU">
+                                <rect key="frame" x="0.0" y="249" width="375" height="69"/>
+                                <animations/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGD-Ue-5JK">
+                                <rect key="frame" x="308" y="363" width="0.0" height="0.0"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" keyboardDismissMode="onDrag" text="Here, you can add some informations about you. Just check in." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0vH-qQ-PeI">
+                                <rect key="frame" x="44" y="378" width="285" height="219"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Chy-6x-LfE">
+                                <rect key="frame" x="234" y="331" width="51" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Respond to alerts in the               kms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jv-qx-UJD">
+                                <rect key="frame" x="44" y="334" width="298" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="KmInput" destination="Chy-6x-LfE" id="8lL-Qc-pQy"/>
+                        <outlet property="KmLabel" destination="3jv-qx-UJD" id="Y2E-Ck-2bc"/>
+                        <outlet property="OptionChoice" destination="XbM-aZ-zWU" id="iIg-mM-BUN"/>
                         <outlet property="RegisterHealthKeeperButton" destination="gd6-gr-kk8" id="slB-V4-Qt8"/>
                         <outlet property="RegisterPatientButton" destination="oE0-J3-o6k" id="71i-Hd-Go4"/>
-                        <outlet property="descriptionInput" destination="Mky-xW-Zrm" id="REg-tI-uN1"/>
-                        <outlet property="profileChoice" destination="Gmo-4V-5sQ" id="wY6-aZ-2Y0"/>
+                        <outlet property="descriptionInput" destination="0vH-qQ-PeI" id="Qwo-al-ZP8"/>
+                        <outlet property="profileChoice" destination="Gmo-4V-5sQ" id="b70-89-4tV"/>
                         <outlet property="userNameLabel" destination="RNm-Nt-YdL" id="mgP-zN-LUj"/>
+                        <outlet property="userOptionChoice" destination="Gxb-HP-7BQ" id="xoZ-J9-wUm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3MY-fx-PLj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3105.5" y="1640.5"/>
+            <point key="canvasLocation" x="1688.5" y="776.5"/>
         </scene>
         <!--Support Page Controller-->
         <scene sceneID="xdf-7q-Yci">
@@ -345,7 +373,7 @@ Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed 
                                 <animations/>
                                 <state key="normal" title="Sign Out"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="showDetail" identifier="segueToReset2" id="jmb-Pp-kSe"/>
+                                    <segue destination="08S-w6-LRa" kind="presentation" id="HWh-QV-hp9"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xjd-vN-Zi3">
@@ -370,16 +398,24 @@ Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed 
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4rv-3D-lNw">
+                                <rect key="frame" x="97" y="611" width="187" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Take it!"/>
+                                <connections>
+                                    <action selector="TakeIt:" destination="yCM-Pm-Yt2" eventType="touchUpInside" id="64u-eI-5q0"/>
+                                </connections>
+                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="elN-9e-kxF">
-                                <rect key="frame" x="31" y="151" width="312" height="451"/>
+                                <rect key="frame" x="0.0" y="151" width="375" height="307"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MyCells" id="uzq-il-nP3">
-                                        <rect key="frame" x="0.0" y="28" width="312" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uzq-il-nP3" id="hI0-XT-URK">
-                                            <rect key="frame" x="0.0" y="0.0" width="312" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
                                         </tableViewCellContentView>
@@ -388,6 +424,13 @@ Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed 
                                 </prototypes>
                                 <sections/>
                             </tableView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qCe-93-1sz">
+                                <rect key="frame" x="0.0" y="459" width="375" height="144"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -395,12 +438,14 @@ Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed 
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="ListOfCases" destination="elN-9e-kxF" id="hxt-vw-Ko2"/>
+                        <outlet property="MapButton" destination="4rv-3D-lNw" id="Rny-90-lD5"/>
+                        <outlet property="PatientDescription" destination="qCe-93-1sz" id="fgo-Xw-JoG"/>
                         <outlet property="UserLabel" destination="phY-df-ZiU" id="4ur-uM-8TX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zKk-CI-Wa9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3135.5" y="418.5"/>
+            <point key="canvasLocation" x="897.5" y="-285.5"/>
         </scene>
         <!--Help Me Page Controller-->
         <scene sceneID="rcE-aQ-thi">
@@ -419,7 +464,7 @@ Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed 
                                 <animations/>
                                 <state key="normal" title="Sign Out"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="showDetail" identifier="SegueToResetApp" id="aWD-E8-POK"/>
+                                    <segue destination="08S-w6-LRa" kind="presentation" id="sZW-F4-vKt"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZd-cE-N1t">
@@ -476,7 +521,7 @@ Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZCt-rY-6EE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2584.5" y="418.5"/>
+            <point key="canvasLocation" x="659.5" y="1774.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="I1x-Qz-ITj">
@@ -495,7 +540,7 @@ Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed 
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Q3-TD-FUm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1204" y="788"/>
+            <point key="canvasLocation" x="-151.5" y="776.5"/>
         </scene>
     </scenes>
     <resources>
@@ -503,9 +548,9 @@ Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed 
         <image name="RedButton.tiff" width="496" height="482"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Fzj-US-XJ1"/>
-        <segue reference="jmb-Pp-kSe"/>
-        <segue reference="G7m-hG-oV0"/>
-        <segue reference="2Cg-RY-lts"/>
+        <segue reference="1tS-QU-96b"/>
+        <segue reference="SmU-z4-UZM"/>
+        <segue reference="Qxh-jV-e3S"/>
+        <segue reference="HWh-QV-hp9"/>
     </inferredMetricsTieBreakers>
 </document>

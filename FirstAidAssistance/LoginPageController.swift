@@ -9,8 +9,7 @@
 import UIKit
 import CoreData
 
-class LoginPageController: UIViewController {
-    
+class LoginPageController: UIViewController, UITextFieldDelegate {
     
     // Inputs
     @IBOutlet weak var emailInput: UITextField!
@@ -35,6 +34,18 @@ class LoginPageController: UIViewController {
         SetUpProfileButton.hidden = true
         ConnectionToKHButton.hidden = true
         ConnectionButton.hidden = true
+        //emailInput.resignFirstResponder()
+        //emailInput.endEditing(true)
+        //passwordInput.resignFirstResponder()
+        //passwordInput.endEditing(true)
+        self.emailInput.delegate = self
+        self.passwordInput.delegate = self
+    }
+    
+    func textFieldShouldReturn(userText: UITextField) -> Bool
+    {
+        userText.resignFirstResponder()
+        return true
     }
 
     override func didReceiveMemoryWarning() {

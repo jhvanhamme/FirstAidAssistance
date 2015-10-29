@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class RegisterPageController: UIViewController {
+class RegisterPageController: UIViewController, UITextFieldDelegate {
     
     // Data for this page
     @IBOutlet weak var PasswordInput: UITextField!
@@ -28,11 +28,25 @@ class RegisterPageController: UIViewController {
         // Main option -> Login as registered user
         self.EmailInput.text = segueEmail
         self.PasswordInput.text = seguePassword
+        //PasswordInput.resignFirstResponder()
+        //EmailInput.resignFirstResponder()
+        //LastNameInput.resignFirstResponder()
+        //FirstNameInput.resignFirstResponder()
+        self.PasswordInput.delegate = self
+        self.EmailInput.delegate = self
+        self.LastNameInput.delegate = self
+        self.FirstNameInput.delegate = self
         
         if(segueEmail != ""){
             // Recover data from DB
             searchUserInfos()
         }
+    }
+    
+    func textFieldShouldReturn(userText: UITextField) -> Bool
+    {
+        userText.resignFirstResponder()
+        return true
     }
     
     override func didReceiveMemoryWarning() {

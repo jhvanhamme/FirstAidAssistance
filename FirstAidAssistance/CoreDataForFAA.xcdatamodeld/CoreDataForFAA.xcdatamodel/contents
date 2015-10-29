@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9057" systemVersion="15B42" minimumToolsVersion="Xcode 7.0">
     <entity name="Alerts" syncable="YES">
+        <attribute name="alertFromUserCondition" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="alertFromUserDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="alertFromUserEmail" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="alertFromUserFirstName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="alertHasBeenTaken" optional="YES" attributeType="String" syncable="YES"/>
@@ -8,6 +10,7 @@
         <attribute name="alertTime" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Users" syncable="YES">
+        <attribute name="userCondition" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userEmail" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userFirstName" optional="YES" attributeType="String" syncable="YES"/>
@@ -16,7 +19,7 @@
         <attribute name="userPassword" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Users" positionX="-3636" positionY="-1845" width="128" height="133"/>
-        <element name="Alerts" positionX="-3636" positionY="-1800" width="128" height="120"/>
+        <element name="Alerts" positionX="-3636" positionY="-1800" width="128" height="150"/>
+        <element name="Users" positionX="-3636" positionY="-1845" width="128" height="150"/>
     </elements>
 </model>
