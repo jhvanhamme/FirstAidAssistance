@@ -153,7 +153,7 @@ class LoginPageController: UIViewController, UITextFieldDelegate {
             }
             
             // Action to the button by UserMode
-            if(userMode == "Medecine Practitioner"){
+            if(userMode == "Medicine Practitioner"){
                 //MainConnectionButton.addTarget(ConnectionToKHButton, action: "ConnectionToKH", forControlEvents: .TouchUpInside)
                 performSegueWithIdentifier("segueToHKFromLogin", sender: sender)
             }else{
@@ -218,9 +218,9 @@ class LoginPageController: UIViewController, UITextFieldDelegate {
                     resultReq = try context.executeFetchRequest(reqGetUser)
                     if (resultReq.count > 0) {
                         let user: NSManagedObject = resultReq.first as! NSManagedObject
-                        // Check User Mode (Medecine or Patient) and actions the right buttons to go to his action page
+                        // Check User Mode (Medicine or Patient) and actions the right buttons to go to his action page
                         // UserMode = 0 -> Patient
-                        // UserMode = 1 -> Medecine Practitioner
+                        // UserMode = 1 -> Medicine Practitioner
                         userMode = user.valueForKey("userMode") as! String
                         userFirstName = user.valueForKey("userFirstName") as! String
                         print("userFirstName = ", userFirstName)

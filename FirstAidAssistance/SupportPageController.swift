@@ -10,9 +10,12 @@ import UIKit
 import MapKit
 import CoreData
 
-class SupportPageController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+class SupportPageController: UIViewController, UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate{
     
-    // Data from this page
+    //Location handler
+    let locationManager = CLLocationManager()
+    
+    // Data on this page
     @IBOutlet weak var UserLabel: UILabel?
     @IBOutlet weak var ListOfCases: UITableView?
     var textCellIdentifier = "MyCells"
@@ -22,6 +25,10 @@ class SupportPageController: UIViewController, UITableViewDataSource, UITableVie
     var lastRow: NSIndexPath = NSIndexPath()
     var rowCpt = 0
     var userEmailAlert = ""
+    var locX:Double = 0
+    var locY:Double = 0
+    var myLocX:Double = 0
+    var myLocY:Double = 0
     
     // Data from other pages
     var segueEmail: String = ""
@@ -48,7 +55,12 @@ class SupportPageController: UIViewController, UITableViewDataSource, UITableVie
             ListOfCases!.dataSource = self
             checkForAlerts()
         }
-
+        
+        // Get Location
+        self.locationManager.delegate = self
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        self.locationManager.requestWhenInUseAuthorization()
+        self.locationManager.startUpdatingLocation()
     }
     
     override func didReceiveMemoryWarning() {
@@ -98,11 +110,14 @@ class SupportPageController: UIViewController, UITableViewDataSource, UITableVie
         let row = indexPath.row
         
         userEmailAlert = sampleListData.AlertList[row].userEmail!
+        locX = sampleListData.AlertList[row].userLocationX!
+        locY = sampleListData.AlertList[row].userLocationY!
         PatientDescription.text = sampleListData.AlertList[row].getCondition()
     }
     
     // DATA METHODS$
     func checkForAlerts(){
+        
         // Init Save data into CoreData
         let appDlg:AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
         let context:NSManagedObjectContext = appDlg.managedObjectContext
@@ -138,7 +153,21 @@ class SupportPageController: UIViewController, UITableViewDataSource, UITableVie
                     newAlerte.userDescription = row.valueForKey("alertFromUserDescription") as! String
                     newAlerte.userTime = String(m) + " min, " + String(s) + " scds"
                     newAlerte.userCondition = row.valueForKey("alertFromUserCondition") as! String
-                    sampleListData.AlertList.append(newAlerte)
+                    newAlerte.userLocationX = row.valueForKey("alertLocationX") as? Double
+                    newAlerte.userLocationY = row.valueForKey("alertLocationY") as? Double
+                    print("Alert location", newAlerte.userLocationX, " ; ", newAlerte.userLocationY)
+                    
+                    // Test if distance of alert < distance rescuer want
+                    let alertLocation: CLLocation = CLLocation.init(latitude: locX, longitude: locY)
+                    let rescuerLocation: CLLocation = CLLocation.init(latitude: myLocX, longitude: myLocY)
+                    
+                    let kilometers: CLLocationDistance  = alertLocation.distanceFromLocation(rescuerLocation) / 1000
+                    print("Alert distance calcul = ", kilometers)
+                    
+                    // TODO, replace 10 by user max km
+                    if(kilometers < 10){
+                        sampleListData.AlertList.append(newAlerte)
+                    }
                 }
             }
         } catch {
@@ -174,7 +203,7 @@ class SupportPageController: UIViewController, UITableViewDataSource, UITableVie
     
     // MAP METHODS
     @IBAction func TakeIt(sender: UIButton) {
-        let alert = UIAlertController.init(title: "Choose", message: "Action View", preferredStyle:UIAlertControllerStyle.ActionSheet)
+        let alert = UIAlertController.init(title: "Choose an app", message: " ", preferredStyle:UIAlertControllerStyle.ActionSheet)
         let firstAction = UIAlertAction.init(title: "Open in Maps", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in
             self.popupMap()
         }
@@ -192,10 +221,47 @@ class SupportPageController: UIViewController, UITableViewDataSource, UITableVie
         updateAlert()
         
         //coordinates for the place we want to display
-        let rdOfficeLocation = CLLocationCoordinate2DMake(50.63301533411599,3.0188316106796265);
+        let rdOfficeLocation = CLLocationCoordinate2DMake(locX,locY);
         let placemark = MKPlacemark.init(coordinate: rdOfficeLocation, addressDictionary: nil)
         let item = MKMapItem.init(placemark: placemark)
         item.name = "Alert's location";
         item.openInMapsWithLaunchOptions(nil)
+    }
+    
+    // LOCATION Methods
+    
+    // didUpdateLocations
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        CLGeocoder().reverseGeocodeLocation(manager.location!, completionHandler: { (placemarks, error) -> Void in
+            
+            if (error != nil) {
+                print("Error:" + error!.localizedDescription)
+                return
+            }
+            
+            if placemarks!.count > 0 {
+                let pm = placemarks![0] as CLPlacemark
+                self.displayLocationInfo(pm)
+                
+            }else {
+                print("Error with data")
+                
+            }
+        })
+    }
+    
+    // displayLocationInfo
+    func displayLocationInfo(placemark: CLPlacemark) {
+        self.locationManager.stopUpdatingLocation()
+        
+        myLocX = (placemark.location?.coordinate.latitude)!
+        myLocY = (placemark.location?.coordinate.latitude)!
+        print("Actual location ", myLocX, " ; ", myLocY)
+    }
+    
+    // didFailWithError
+    func didFailWithError(manager: CLLocationManager!, didFailWithError error: NSError!) {
+        print("Error: " + error.localizedDescription)
     }
 }

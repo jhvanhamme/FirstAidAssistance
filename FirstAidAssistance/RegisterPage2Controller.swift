@@ -24,7 +24,7 @@ class RegisterPage2Controller: UIViewController, UIPickerViewDataSource, UIPicke
     @IBOutlet weak var KmInput: UITextField!
     var pickerData: [String] = [String]()
     var pickerOptionData: [String] = [String]()
-    var choice: String = "Medecine Practitioner"
+    var choice: String = "Medicine Practitioner"
     var choiceOption: String = "Hospital Staff"
     var userFirstName: String = "";
     
@@ -40,7 +40,7 @@ class RegisterPage2Controller: UIViewController, UIPickerViewDataSource, UIPicke
         // Picker data initializer
         self.profileChoice.delegate = self
         self.profileChoice.dataSource = self
-        pickerData = ["Medecine Practitioner","Patient"]
+        pickerData = ["Medicine Practitioner","Patient"]
         
         self.OptionChoice.delegate = self
         self.OptionChoice.dataSource = self
@@ -80,9 +80,9 @@ class RegisterPage2Controller: UIViewController, UIPickerViewDataSource, UIPicke
         
         if pickerView.tag == 1{
             choice = pickerData[row]
-            pickerData = ["Medecine Practitioner","Patient"]
+            pickerData = ["Medicine Practitioner","Patient"]
             
-            if choice == "Medecine Practitioner"{
+            if choice == "Medicine Practitioner"{
                 RegisterPatientButton.hidden = true
                 RegisterHealthKeeperButton.hidden = false
                 KmLabel.hidden = false
@@ -162,6 +162,7 @@ class RegisterPage2Controller: UIViewController, UIPickerViewDataSource, UIPicke
                 resultReq.first!.setValue(choice, forKey: "userMode")
                 resultReq.first!.setValue(descriptionInput.text, forKey: "userDescription")
                 resultReq.first!.setValue(choiceOption, forKey: "userCondition")
+                resultReq.first!.setValue(KmInput.text, forKey: "userMaxKM")
                 userFirstName = resultReq.first!.valueForKey("userFirstName") as! String
                 print("userFirstName = ", userFirstName)
                 do {

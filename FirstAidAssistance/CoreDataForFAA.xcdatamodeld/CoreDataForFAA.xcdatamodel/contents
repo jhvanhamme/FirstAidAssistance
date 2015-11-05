@@ -6,7 +6,8 @@
         <attribute name="alertFromUserEmail" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="alertFromUserFirstName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="alertHasBeenTaken" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="alertLocation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="alertLocationX" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="alertLocationY" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="alertTime" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Users" syncable="YES">
@@ -15,11 +16,12 @@
         <attribute name="userEmail" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userFirstName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userLastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userMaxKM" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userMode" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userPassword" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Alerts" positionX="-3636" positionY="-1800" width="128" height="150"/>
-        <element name="Users" positionX="-3636" positionY="-1845" width="128" height="150"/>
+        <element name="Alerts" positionX="-3636" positionY="-1800" width="128" height="165"/>
+        <element name="Users" positionX="-3636" positionY="-1845" width="128" height="165"/>
     </elements>
 </model>

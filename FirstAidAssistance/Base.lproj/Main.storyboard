@@ -209,7 +209,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qKg-aX-v31">
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qKg-aX-v31">
                                 <rect key="frame" x="161" y="172" width="177" height="30"/>
                                 <animations/>
                                 <accessibility key="accessibilityConfiguration">
@@ -224,16 +224,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fAX-Tp-BRy">
-                                <rect key="frame" x="36" y="364" width="297" height="250"/>
-                                <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Terms of Use :
-
-Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </string>
-                                <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ex1-Ub-JDh">
                                 <rect key="frame" x="162" y="622" width="57" height="30"/>
                                 <animations/>
@@ -243,6 +233,28 @@ Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed 
                                     <segue destination="k4E-Ob-pAk" kind="show" identifier="segueToProfile2" id="p9Q-YW-H7e"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fAX-Tp-BRy">
+                                <rect key="frame" x="36" y="364" width="302" height="209"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">Terms of Use :
+
+By browsing and using this app, you are agreeing to comply with and be bound by the following terms and conditions of use, which together with our privacy policy govern IBM’s relationship with you in relation to this app. If you disagree with any part of these terms and conditions, please do not use our app.
+The term ‘IBM’ or ‘us’ or ‘we’ refers to the owner of the app. The term ‘you’ refers to the user or viewer of our app.
+The use of this app is subject to the following terms of use:
+The content of the pages of this app is for your general information and use only. It is subject to change without notice.
+This app uses geo-fencing to monitor browsing preferences. If you do allow geo-fencing to be used, the following personal information may be stored by us for use by us.
+Neither we nor any third parties provide any warranty or guarantee as to the accuracy, timeliness, performance, completeness or suitability of the information and materials found or offered on this app for any particular purpose. You acknowledge that such information and materials may contain inaccuracies or errors and we expressly exclude liability for any such inaccuracies or errors to the fullest extent permitted by law.
+Your use of any information or materials on this app is entirely at your own risk, for which we shall not be liable. It shall be your own responsibility to ensure that any products, services or information available through this app meet your specific requirements.
+This app contains material which is owned by or licensed to us. This material includes, but is not limited to, the design, layout, look, appearance and graphics. Reproduction is prohibited other than in accordance with the copyright notice, which forms part of these terms and conditions.
+All trademarks reproduced in this app, which are not the property of, or licensed to the operator, are acknowledged on the app.
+Unauthorised use of this app may give rise to a claim for damages and/or be a criminal offence.
+From time to time, this app may also include links to other apps. These links are provided for your convenience to provide further information. They do not signify that we endorse the app(s). We have no responsibility for the content of the linked app(s).
+Your use of this app and any dispute arising out of such use of the app is subject to the laws of all around the world.
+</mutableString>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -568,8 +580,8 @@ Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed 
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="sZW-F4-vKt"/>
-        <segue reference="2Cg-RY-lts"/>
-        <segue reference="Fzj-US-XJ1"/>
-        <segue reference="G7m-hG-oV0"/>
+        <segue reference="Qxh-jV-e3S"/>
+        <segue reference="6pu-4Z-Hkr"/>
+        <segue reference="1tS-QU-96b"/>
     </inferredMetricsTieBreakers>
 </document>

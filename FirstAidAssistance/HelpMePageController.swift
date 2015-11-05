@@ -108,7 +108,8 @@ class HelpMePageController: UIViewController, CLLocationManagerDelegate{
                 alert.setValue(resultReq.first!.valueForKey("userCondition"), forKey: "alertFromUserCondition")
                 
                 // Get Current Location
-                alert.setValue("Lille", forKey: "alertLocation")
+                alert.setValue(50.63301533411599, forKey: "alertLocationX")
+                alert.setValue(3.0188316106796265, forKey: "alertLocationY")
                 
                 // getDate
                 let dateFormatter = NSDateFormatter()

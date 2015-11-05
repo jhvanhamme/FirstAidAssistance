@@ -25,6 +25,8 @@ class Alert{
     var userTime: String?
     var userCondition: String?
     var userDescription: String?
+    var userLocationX: Double?
+    var userLocationY: Double?
     
     init(){
         userEmail = ""
@@ -32,6 +34,8 @@ class Alert{
         userTime =  ""
         userCondition = ""
         userDescription = ""
+        userLocationX = 0
+        userLocationY = 0
     }
     
     func getShortDescription() -> String{
